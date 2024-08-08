@@ -59,14 +59,16 @@
         }
 
         #ad-close-btn {
-            margin-bottom: -20px;
-            font-size: 18px;
+            position: absolute;
+            top: -40px; /* Reklamın tamamen üstüne çıkmaması için */
+            right: 0;
+            font-size: 16px;
             background: #ff0000;
             border: none;
             cursor: pointer;
             color: white;
-            padding: 5px 10px;
-            border-radius: 50%;
+            padding: 5px 15px;
+            border-radius: 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.3);
             z-index: 1001;
         }
@@ -78,6 +80,7 @@
             margin-top: 5px;
         }
 
+        /* Mobil uyumluluk için medya sorgusu */
         @media (max-width: 480px) {
             #ad-wrapper {
                 width: 320px;
@@ -88,9 +91,9 @@
             }
 
             #ad-close-btn {
-                margin-bottom: -15px;
-                font-size: 16px;
-                padding: 4px 8px;
+                top: -35px;
+                font-size: 14px;
+                padding: 4px 12px;
             }
         }
     </style>
@@ -98,7 +101,7 @@
   <body>
     <div id="root"></div>
     <div id="ad-wrapper">
-      <button id="ad-close-btn">&times;</button>
+      <button id="ad-close-btn">Close</button>
       <div id="ad-container">
         <iframe data-aa='2344819' src='//ad.a-ads.com/2344819?size=468x60'></iframe>
         <a id="preview-link" href="https://aads.com/campaigns/new/?source_id=2344819&source_type=ad_unit&partner=2344819">Advertise here</a>
