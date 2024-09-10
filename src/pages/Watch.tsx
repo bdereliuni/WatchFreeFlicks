@@ -43,16 +43,14 @@ export default function Watch() {
   }
 
   function getSource() {
-  let modifiedType = type === 'series' ? 'tv' : type;
-
-  let url = `https://player.watchfreeflicks.buzz/embed/${modifiedType}/${id}`;
-  url += `?v=${import.meta.env.VITE_APP_VERSION}&n=${import.meta.env.VITE_APP_NAME}`;
-
-  if (window.location.origin) url += `&o=${encodeURIComponent(window.location.origin)}`;
-  if (type === 'series') url += `&s=${season}&e=${episode}`;
-
-  return url;
-}
+    let url = `https://player.hqstream.live/watch/${id}`;
+  
+    if (type === 'series') {
+      url += `?s=${season}&e=${episode}`;
+    }
+  
+    return url;
+  }
 
 
 
@@ -142,7 +140,7 @@ export default function Watch() {
       JSON.stringify({
         season: parseInt(s),
         episode: parseInt(e)
-      })
+      })  
     );
   }, [id, search]);
 
