@@ -43,16 +43,15 @@ export default function Watch() {
   }
 
   function getSource() {
-    let url = `https://player.hqstream.live/watch/${id}`;
-  
+    const mediaType = type === 'series' ? 'tv' : 'movie';
+    let url = `https://vidlink.pro/${mediaType}/${id}`;
+    
     if (type === 'series') {
-      url += `?s=${season}&e=${episode}`;
+      url = `https://vidlink.pro/${mediaType}/${id}/${season}/${episode}`;
     }
   
     return url;
   }
-
-
 
   function getTitle() {
     let title = data ? data.title : 'Watch';
