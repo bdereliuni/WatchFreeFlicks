@@ -44,10 +44,10 @@ export default function Watch() {
 
   function getSource() {
     const mediaType = type === 'series' ? 'tv' : 'movie';
-    let url = `https://vidbinge.dev/embed/${mediaType}/${id}`;
+    let url = `https://player.videasy.net/${mediaType}/${id}`;
     
     if (type === 'series') {
-      url = `https://vidbinge.dev/embed/${mediaType}/${id}/${season}/${episode}`;
+      url = `https://player.videasy.net/${mediaType}/${id}/${season}/${episode}`;
     }
   
     return url;
