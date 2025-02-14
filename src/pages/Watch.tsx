@@ -44,10 +44,10 @@ export default function Watch() {
 
   function getSource() {
     const mediaType = type === 'series' ? 'tv' : 'movie';
-    let url = `https://vidlink.pro/${mediaType}/${id}`;
+    let url = `https://vidbinge.dev/embed/${mediaType}/${id}`;
     
     if (type === 'series') {
-      url = `https://vidlink.pro/${mediaType}/${id}/${season}/${episode}`;
+      url = `https://vidbinge.dev/embed/${mediaType}/${id}/${season}/${episode}`;
     }
   
     return url;
@@ -168,7 +168,14 @@ export default function Watch() {
 
         <h2 className="player-title">{getTitle()}</h2>
 
-        <iframe allowFullScreen referrerPolicy="origin" title={getTitle()} src={getSource()}></iframe>
+        <iframe 
+          allowFullScreen 
+          referrerPolicy="origin" 
+          title={getTitle()} 
+          src={getSource()}
+          sandbox="allow-same-origin allow-scripts allow-forms allow-presentation"
+          allow="autoplay; fullscreen; picture-in-picture"
+        ></iframe>
       </div>
     </>
   );
